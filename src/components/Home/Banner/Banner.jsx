@@ -1,5 +1,4 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
 import avatar from "../../../assets/images/avatar.jpg";
 import cv from "../../../assets/documents/cv.pdf";
 
@@ -21,24 +20,7 @@ const Banner = () => {
 
         {/* Banner typing */}
         <h1 className="text-accent text-4xl md:text-6xl text-center font-semibold">
-          Hi I'm{" "}
-          <span className="text-primary font-extrabold">
-            <TypeAnimation
-              sequence={[
-                "Ramzan Ali",
-                2000,
-                "Designer",
-                2000,
-                "Developer",
-                2000,
-                "Programmer",
-                2000,
-              ]}
-              wrapper="span"
-              cursor={true}
-              repeat={Infinity}
-            />
-          </span>
+          Hi I'm <span className="text-primary font-extrabold">Ramzan Ali</span>
         </h1>
 
         {/* Banner info */}
