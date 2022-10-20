@@ -24,7 +24,7 @@ const Banner = () => {
         </h1>
 
         {/* Banner info */}
-        <p className="text-secondary">
+        <p className="text-secondary text-center">
           Full stack web developer based on{" "}
           <span className="font-semibold">Bangladesh</span>
         </p>
