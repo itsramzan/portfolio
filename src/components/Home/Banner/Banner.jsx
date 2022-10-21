@@ -30,7 +30,7 @@ const Banner = () => {
         </p>
 
         {/* Banner button */}
-        <div>
+        <div className="mt-2">
           <a
             href={cv}
             download
