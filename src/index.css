@@ -2,7 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@layer components {
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  .rc-pagination-item {
+    @apply h-8 w-8 border-2 border-primary bg-transparent rounded-full;
+  }
+  .rc-pagination-item a {
+    @apply text-primary font-semibold;
+  }
+  .rc-pagination-item:focus,
+  .rc-pagination-item:hover {
+    @apply bg-primary text-base-100 border-primary;
+  }
+  .rc-pagination-item:focus a,
+  .rc-pagination-item:hover a {
+    @apply text-base-100;
+  }
+
+  .rc-pagination-item-active {
+    @apply h-8 w-8 border-2 border-primary bg-primary rounded-full;
+  }
+  .rc-pagination-item-active a {
+    @apply text-base-100;
+  }
+  .rc-pagination-item-active:focus,
+  .rc-pagination-item-active:hover {
+    @apply bg-primary text-base-100 border-primary;
+  }
+  .rc-pagination-item-active:focus a,
+  .rc-pagination-item-active:hover a {
+    @apply text-base-100;
+  }
+
+  .rc-pagination-prev,
+  .rc-pagination-next {
+    @apply h-8 w-10 bg-primary text-base-100 rounded-md;
+  }
+  .rc-pagination-disabled {
+    @apply h-8 w-10 bg-primary text-base-100 opacity-50 rounded-md;
+  }
+
+  .swiper {
+    @apply pb-12 relative !important;
+  }
+  .swiper-slide {
+    @apply opacity-40 transition-opacity duration-500;
+  }
+  .swiper-slide-active {
+    @apply opacity-100;
+  }
+  .swiper-pagination {
+    @apply absolute bottom-0;
+  }
+  .swiper-pagination-bullet {
+    @apply h-3 w-3 rounded-lg duration-500 bg-primary;
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-primary w-8 rounded-md;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +76,7 @@
   outline: none;
   text-decoration: none;
   user-select: none;
-  font-family: "Quicksand", "Hind Siliguri";
+  font-family: "Saira", "Hind Siliguri";
 }
 html,
 body {
@@ -22,20 +87,11 @@ img {
   width: 100%;
   object-fit: cover;
 }
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #aaaaaa;
-  background: #aaaaaa;
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #16bef5;
-  border-radius: 10px;
+input[data-autocompleted] {
+  background-color: transparent !important;
 }

@@ -1,9 +1,13 @@
 import React from "react";
 
 const Heading = ({ text }) => {
+  const [first, ...rest] = text.split(" ");
+
   return (
-    <div className="flex justify-center mb-12">
-      <h1 className="text-accent text-4xl font-bold">{text}</h1>
+    <div className="flex justify-center items-center">
+      <p className="text-3xl font-bold capitalize">
+        {first} <span className="text-primary">{rest}</span>
+      </p>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="w-full h-16 bg-base-100 flex justify-between items-center fixed top-0 z-50 px-4 md:px-28">
+    <div className="w-full h-16 bg-base-100 flex justify-between items-center fixed top-0 z-50 px-4 md:px-20">
       <Logo />
       <div className="flex items-center gap-8">
         <Links show={show} />
@@ -40,12 +40,12 @@ const Links = ({ show }) => {
     <div
       className={`flex flex-col fixed top-[64px] ${
         show ? "left-[0%]" : "left-[-100%]"
-      } transition-all delay-200 bottom-0 w-full h-screen bg-base-100 p-4 gap-4 md:static md:bg-transparent md:h-auto md:w-auto md:flex md:flex-row md:item-center md:gap-4`}
+      } transition-all delay-200 bottom-0 w-full h-screen bg-base-100 p-4 gap-4 md:static md:bg-transparent md:h-auto md:w-auto md:flex md:flex-row md:item-center md:gap-8`}
     >
       <LinkItem href="#banner" text="Home" />
       <LinkItem href="#about" text="About" />
       <LinkItem href="#services" text="Services" />
-      <LinkItem href="#portfolio" text="Portfolio" />
+      <LinkItem href="#portfolios" text="Portfolios" />
       <LinkItem href="#clients" text="Clients" />
       <LinkItem href="#contact" text="Contact" />
     </div>
@@ -54,7 +54,7 @@ const Links = ({ show }) => {
 
 const LinkItem = ({ href, text }) => {
   return (
-    <a href={href} className="text-3xl text-center md:text-base font-medium">
+    <a href={href} className="md:text-base font-medium">
       {text}
     </a>
   );
