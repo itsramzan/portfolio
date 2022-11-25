@@ -21,7 +21,7 @@ const Contact = () => {
 
         <div className="w-full">
           <form action="" className="space-y-4 bg-base-300 p-4 rounded-md">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="flex flex-col gap-2 w-full">
                 <label htmlFor="username">Username</label>
                 <input

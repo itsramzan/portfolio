@@ -8,6 +8,7 @@ import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoLinkedin,
+  IoLogoYoutube,
 } from "react-icons/io5";
 
 const About = () => {
@@ -15,44 +16,50 @@ const About = () => {
     <SectionLayout id="about">
       <Heading text="About Me" />
 
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-12 md:col-span-4 bg-base-300 p-8 rounded-md space-y-8">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:w-4/12 bg-base-300 p-8 rounded-md space-y-8">
           <img src={avatar} alt="" className="h-96 object-top rounded-md" />
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-2">
             <a
               href="https://www.facebook.com/itsramzan"
-              className="text-xl btn btn-sm btn-primary"
+              className="btn btn-square btn-sm btn-primary rounded-full"
             >
               <IoLogoFacebook />
             </a>
             <a
               href="https://www.facebook.com/itsramzan"
-              className="text-xl btn btn-sm btn-primary"
+              className="btn btn-square btn-sm btn-primary rounded-full"
             >
               <IoLogoTwitter />
             </a>
             <a
               href="https://www.facebook.com/itsramzan"
-              className="text-xl btn btn-sm btn-primary"
+              className="btn btn-square btn-sm btn-primary rounded-full"
             >
               <IoLogoInstagram />
             </a>
             <a
               href="https://www.facebook.com/itsramzan"
-              className="text-xl btn btn-sm btn-primary"
+              className="btn btn-square btn-sm btn-primary rounded-full"
             >
               <IoLogoGithub />
             </a>
             <a
               href="https://www.facebook.com/itsramzan"
-              className="text-xl btn btn-sm btn-primary"
+              className="btn btn-square btn-sm btn-primary rounded-full"
             >
               <IoLogoLinkedin />
+            </a>
+            <a
+              href="https://www.facebook.com/itsramzan"
+              className="btn btn-square btn-sm btn-primary rounded-full"
+            >
+              <IoLogoYoutube />
             </a>
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-8">right</div>
+        <div className="w-full md:w-8/12">Tab bar</div>
       </div>
     </SectionLayout>
   );

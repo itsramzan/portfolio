@@ -24,7 +24,7 @@ const Banner = () => {
           <p className="text-4xl md:text-6xl font-semibold">
             I'm <span className="text-primary font-bold">Ramzan Ali</span>
           </p>
-          <p>
+          <p className="text-center">
             Full stack web developer based on{" "}
             <span className="text-primary font-bold">Bangladesh</span>
           </p>
