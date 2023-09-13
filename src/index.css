@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    user-select: none;
+    font-family: "Dosis", sans-serif;
+  }
+  img {
+    @apply object-cover;
+  }
+  .swiper {
+    @apply pb-11;
+    position: relative !important;
+  }
+  .swiper-slide {
+    @apply opacity-40 duration-500 transition-opacity;
+  }
+  .swiper-slide-active {
+    @apply opacity-100;
+  }
+  .swiper-pagination {
+    @apply absolute bottom-0;
+  }
+  .swiper-pagination-bullet {
+    @apply bg-primary h-3 w-3 rounded-lg transition-all duration-500;
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-primary w-8 rounded-lg;
+  }
+}
