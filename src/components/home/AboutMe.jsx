@@ -1,21 +1,20 @@
 import React from "react";
 import Heading from "../shared/Heading";
-import data from "../../data/data";
 import Card from "../shared/Card";
+import data from "../../data/data";
 
-const AboutMe = () => {
+export default function AboutMe() {
   return (
-    <div className="space-y-10">
+    <section id="about" className="pt-20 space-y-10 w-full">
       <Heading text="About Me" />
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <Hero />
         <Skills />
       </div>
-    </div>
+    </section>
   );
-};
-
-export default AboutMe;
+}
 
 const Hero = () => {
   const {
@@ -28,21 +27,22 @@ const Hero = () => {
     <div className="space-y-8">
       <p className="text-2xl">
         Hi I'm{" "}
-        <span className="font-semibold text-primary">{banner.author}</span>
+        <span className="font-semibold gradient-text">{banner.author}</span>
       </p>
       <img
         src={aboutMe.image}
         alt={banner.author}
-        className="h-72 w-full md:w-72 rounded-lg"
+        className="h-72 w-full md:w-72 rounded-lg hidden md:block"
       />
       <p className="text-justify">{aboutMe.description}</p>
       <div className="flex items-center gap-8">
         {socialLinks.map((link) => {
           return (
             <a
+              key={link.id}
               href={link.link}
               title={link.text}
-              className="h-8 w-8 outline outline-1 flex items-center justify-center rounded-lg duration-500 hover:outline-primary hover:text-primary"
+              className="btn btn-outline btn-primary btn-square btn-sm"
             >
               <link.Icon />
             </a>

@@ -10,11 +10,17 @@ import {
   DiJsBadge,
   DiReact,
   DiAtom,
-  DiNodejs,
+  DiNodejsSmall,
   DiMongodb,
   DiPython,
 } from "react-icons/di";
 import {
+  IoHomeOutline,
+  IoPersonOutline,
+  IoBuildOutline,
+  IoAlbumsOutline,
+  IoChatbubbleOutline,
+  IoCallOutline,
   IoLogoFacebook,
   IoLogoTwitter,
   IoLogoLinkedin,
@@ -22,6 +28,44 @@ import {
 } from "react-icons/io5";
 
 const data = {
+  navlinks: [
+    {
+      id: 1,
+      text: "Home",
+      to: "#home",
+      Icon: IoHomeOutline,
+    },
+    {
+      id: 2,
+      text: "About Me",
+      to: "#about",
+      Icon: IoPersonOutline,
+    },
+    {
+      id: 3,
+      text: "Services",
+      to: "#services",
+      Icon: IoBuildOutline,
+    },
+    {
+      id: 4,
+      text: "Projects",
+      to: "#projects",
+      Icon: IoAlbumsOutline,
+    },
+    {
+      id: 5,
+      text: "Reviews",
+      to: "#reviews",
+      Icon: IoChatbubbleOutline,
+    },
+    {
+      id: 6,
+      text: "Contact",
+      to: "#contact",
+      Icon: IoCallOutline,
+    },
+  ],
   banner: {
     author: "Md Ramzan Ali",
     jobs: [
@@ -68,7 +112,7 @@ const data = {
     {
       id: 6,
       text: "Node JS",
-      Icon: DiNodejs,
+      Icon: DiNodejsSmall,
     },
     {
       id: 7,

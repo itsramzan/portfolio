@@ -3,10 +3,10 @@ import Heading from "../shared/Heading";
 
 const Projects = () => {
   return (
-    <div className="space-y-10">
+    <section id="projects" className="pt-20 space-y-10 w-full">
       <Heading text="Projects" />
       <p>Coming soon...</p>
-    </div>
+    </section>
   );
 };
 

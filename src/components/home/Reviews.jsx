@@ -9,7 +9,7 @@ const Reviews = () => {
   const { reviews } = data;
 
   return (
-    <div className="space-y-10">
+    <section id="reviews" className="pt-20 space-y-10 w-full">
       <Heading text="Reviews" />
 
       <Slider>
@@ -34,7 +34,7 @@ const Reviews = () => {
           );
         })}
       </Slider>
-    </div>
+    </section>
   );
 };
 

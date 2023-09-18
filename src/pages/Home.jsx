@@ -10,13 +10,17 @@ import Footer from "../components/home/Footer";
 
 const Home = () => {
   return (
-    <div className="mx-auto w-10/12 space-y-20">
-      <Banner />
-      <AboutMe />
-      <Services />
-      <Projects />
-      <Reviews />
-      <Contact />
+    <div>
+      <Navbar />
+      <div className="mx-auto w-10/12 space-y-20">
+        <Banner />
+        <AboutMe />
+        <Services />
+        <Projects />
+        <Reviews />
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 };

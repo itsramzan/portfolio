@@ -5,8 +5,8 @@
 
 @layer base {
   * {
-    user-select: none;
     font-family: "Dosis", sans-serif;
+    @apply select-none scroll-smooth;
   }
   img {
     @apply object-cover;
@@ -29,5 +29,11 @@
   }
   .swiper-pagination-bullet-active {
     @apply bg-primary w-8 rounded-lg;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-info text-transparent bg-clip-text w-fit;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary to-info;
   }
 }

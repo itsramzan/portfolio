@@ -7,7 +7,7 @@ const Services = () => {
   const { services } = data;
 
   return (
-    <div className="space-y-10 w-full">
+    <section id="services" className="pt-20 space-y-10 w-full">
       <Heading text="Services" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -23,7 +23,7 @@ const Services = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

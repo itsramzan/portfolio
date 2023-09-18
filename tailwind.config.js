@@ -9,6 +9,7 @@ export default {
     themes: ["cmyk", "dracula"],
   },
   safelist: [
+    "gradient-text",
     "swiper",
     "swiper-slide",
     "swiper-slide-active",
