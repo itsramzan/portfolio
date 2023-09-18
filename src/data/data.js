@@ -1,3 +1,4 @@
+import { SiCodersrank } from "react-icons/si";
 import {
   DiCode,
   DiDatabase,
@@ -15,6 +16,8 @@ import {
   DiPython,
 } from "react-icons/di";
 import {
+  IoMenu,
+  IoClose,
   IoHomeOutline,
   IoPersonOutline,
   IoBuildOutline,
@@ -28,44 +31,51 @@ import {
 } from "react-icons/io5";
 
 const data = {
-  navlinks: [
-    {
-      id: 1,
-      text: "Home",
-      to: "#home",
-      Icon: IoHomeOutline,
+  navbar: {
+    logo: {
+      Icon: SiCodersrank,
+      textFirst: "ITS",
+      textLast: "RAMZAN",
     },
-    {
-      id: 2,
-      text: "About Me",
-      to: "#about",
-      Icon: IoPersonOutline,
-    },
-    {
-      id: 3,
-      text: "Services",
-      to: "#services",
-      Icon: IoBuildOutline,
-    },
-    {
-      id: 4,
-      text: "Projects",
-      to: "#projects",
-      Icon: IoAlbumsOutline,
-    },
-    {
-      id: 5,
-      text: "Reviews",
-      to: "#reviews",
-      Icon: IoChatbubbleOutline,
-    },
-    {
-      id: 6,
-      text: "Contact",
-      to: "#contact",
-      Icon: IoCallOutline,
-    },
-  ],
+    links: [
+      {
+        id: 1,
+        text: "Home",
+        to: "#home",
+        Icon: IoHomeOutline,
+      },
+      {
+        id: 2,
+        text: "About Me",
+        to: "#about",
+        Icon: IoPersonOutline,
+      },
+      {
+        id: 3,
+        text: "Services",
+        to: "#services",
+        Icon: IoBuildOutline,
+      },
+      {
+        id: 4,
+        text: "Projects",
+        to: "#projects",
+        Icon: IoAlbumsOutline,
+      },
+      {
+        id: 5,
+        text: "Reviews",
+        to: "#reviews",
+        Icon: IoChatbubbleOutline,
+      },
+      {
+        id: 6,
+        text: "Contact",
+        to: "#contact",
+        Icon: IoCallOutline,
+      },
+    ],
+  },
   banner: {
     author: "Md Ramzan Ali",
     jobs: [

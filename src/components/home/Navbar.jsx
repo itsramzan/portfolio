@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SiCodersrank } from "react-icons/si";
 import { IoMenu, IoClose } from "react-icons/io5";
 import data from "../../data/data";
 
@@ -18,21 +17,30 @@ export default function Navbar() {
 }
 
 export const Logo = () => {
+  const {
+    navbar: {
+      logo: { Icon, textFirst, textLast },
+    },
+  } = data;
+
   return (
     <a
       href="#home"
       className="flex items-center gap-2 text-xl uppercase font-bold"
     >
-      <SiCodersrank />
+      <Icon />
       <p>
-        Its<span className="gradient-text">Ramzan</span>
+        {textFirst}
+        <span className="gradient-text">{textLast}</span>
       </p>
     </a>
   );
 };
 
 export const Links = ({ isVisibile }) => {
-  const { navlinks } = data;
+  const {
+    navbar: { links },
+  } = data;
 
   return (
     <div
@@ -40,8 +48,8 @@ export const Links = ({ isVisibile }) => {
         isVisibile ? "-left-0" : "-left-full"
       } top-16 duration-500 w-full h-screen bg-base-100 flex flex-col md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:gap-8`}
     >
-      {navlinks.map((navlink) => {
-        const { id, Icon, text, to } = navlink;
+      {links.map((link) => {
+        const { id, Icon, text, to } = link;
         return (
           <a
             key={id}

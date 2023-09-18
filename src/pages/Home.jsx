@@ -7,6 +7,7 @@ import Projects from "../components/home/Projects";
 import Reviews from "../components/home/Reviews";
 import Contact from "../components/home/Contact";
 import Footer from "../components/home/Footer";
+import ScrollTop from "../components/shared/ScrollTop";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         <Contact />
       </div>
       <Footer />
+      <ScrollTop />
     </div>
   );
 };

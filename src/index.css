@@ -5,15 +5,20 @@
 
 @layer base {
   * {
-    font-family: "Dosis", sans-serif;
-    @apply select-none scroll-smooth;
+    @apply select-none scroll-smooth font-["Dosis",sans-serif];
   }
   img {
     @apply object-cover;
   }
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-primary to-info rounded-md;
+  }
+
   .swiper {
-    @apply pb-11;
-    position: relative !important;
+    @apply pb-11 !relative;
   }
   .swiper-slide {
     @apply opacity-40 duration-500 transition-opacity;
