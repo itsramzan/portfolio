@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
 import data from "../../data/data";
 
@@ -9,7 +10,7 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 h-16 w-full z-50 backdrop-blur-3xl">
       <div className="w-10/12 h-full mx-auto flex items-center justify-between">
         <Logo />
-        <Links {...{ isVisibile }} />
+        <Links {...{ isVisibile, setIsVisibile }} />
         <Bar {...{ isVisibile, setIsVisibile }} />
       </div>
     </div>
@@ -37,12 +38,15 @@ export const Logo = () => {
   );
 };
 
-export const Links = ({ isVisibile }) => {
+export const Links = ({ isVisibile, setIsVisibile }) => {
   const {
     navbar: { links },
   } = data;
 
   const [activeSection, setActiveSection] = useState(null);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -52,6 +56,7 @@ export const Links = ({ isVisibile }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            navigate(`#${entry.target.id}`);
           }
         });
       },
@@ -69,6 +74,10 @@ export const Links = ({ isVisibile }) => {
     };
   }, []);
 
+  useEffect(() => {
+    setIsVisibile(false);
+  }, [location]);
+
   return (
     <div
       className={`absolute ${
@@ -83,12 +92,12 @@ export const Links = ({ isVisibile }) => {
           <a
             key={id}
             href={to}
-            className={`w-10/12 md:w-auto mx-auto flex items-center gap-2 py-4 text-xl md:py-0 md:text-base ${
-              active && "gradient-text font-semibold"
-            }`}
+            className="w-10/12 md:w-auto mx-auto flex items-center gap-2 py-4 text-xl md:py-0 md:text-base"
           >
             {/* <Icon className="block md:hidden" /> */}
-            <p>{text}</p>
+            <p className={`${active && "gradient-text font-semibold"}`}>
+              {text}
+            </p>
           </a>
         );
       })}
