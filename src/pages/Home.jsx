@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/home/Navbar";
 import Banner from "../components/home/Banner";
 import AboutMe from "../components/home/AboutMe";
@@ -10,6 +10,15 @@ import Footer from "../components/home/Footer";
 import ScrollTop from "../components/shared/ScrollTop";
 
 const Home = () => {
+  // const refs = {
+  //   banner: useRef(null),
+  //   aboutMe: useRef(null),
+  //   services: useRef(null),
+  //   projects: useRef(null),
+  //   reviews: useRef(null),
+  //   contacts: useRef(null),
+  // };
+
   return (
     <div>
       <Navbar />

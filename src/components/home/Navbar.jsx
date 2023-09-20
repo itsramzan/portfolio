@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import data from "../../data/data";
 
@@ -42,21 +42,52 @@ export const Links = ({ isVisibile }) => {
     navbar: { links },
   } = data;
 
+  const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    };
+  }, []);
+
   return (
     <div
       className={`absolute ${
         isVisibile ? "-left-0" : "-left-full"
-      } top-16 duration-500 w-full h-screen bg-base-100 flex flex-col md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:gap-8`}
+      }  top-16 duration-500 w-full h-screen bg-base-100 flex flex-col md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:gap-8`}
     >
       {links.map((link) => {
         const { id, Icon, text, to } = link;
+        const active = to.endsWith(activeSection);
+
         return (
           <a
             key={id}
             href={to}
-            className="w-10/12 md:w-auto mx-auto flex items-center gap-2 py-4 text-xl md:py-0 md:text-base"
+            className={`w-10/12 md:w-auto mx-auto flex items-center gap-2 py-4 text-xl md:py-0 md:text-base ${
+              active && "gradient-text font-semibold"
+            }`}
           >
-            <Icon className="block md:hidden" />
+            {/* <Icon className="block md:hidden" /> */}
             <p>{text}</p>
           </a>
         );
